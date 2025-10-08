@@ -13,6 +13,7 @@ function ImagePicker({ label, name }) {
     const file = event.target.files[0];
 
     if (!file) {
+      setPickedImage(null);
       return;
     }
 
@@ -50,6 +51,7 @@ function ImagePicker({ label, name }) {
             name={name}
             ref={imageInput}
             onChange={handleImageChange}
+            required
           />
           <button
             onClick={handlePickClick}
